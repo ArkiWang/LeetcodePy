@@ -64,16 +64,13 @@ class Solution:
             return str1[: posi] + str2
 
     def shortestCommonSupersequence(self, str1: str, str2: str) -> str:
-        m = len(str1)
-        n = len(str2)
-        dp = [['']* n for _ in range(m)]
-        for i in range(m):
-            for j in range(n):
-                if i == 0 or j == 0:
-                    if str1[i] == str2[j]:
-                        dp[i][j] = str1[i]
-                elif str1[i] == str2[j]:
-                    dp[i][j] = dp[i-1][j-1] + str1[i]
+        m = len(str1) + 1
+        n = len(str2) + 1
+        dp = [[''] * n for _ in range(m)]
+        for i in range(1, m):
+            for j in range(1, n):
+                if str1[i-1] == str2[j-1]:
+                    dp[i][j] = dp[i-1][j-1] + str1[i-1]
                 elif len(dp[i-1][j]) > len(dp[i][j-1]):
                     dp[i][j] = dp[i-1][j]
                 else:
@@ -109,6 +106,9 @@ str2 = "dddbbdcbccaccbababaacbcbacdddcdabadcacddbacadabdabcdbaaabaccbdaa"
 
 str1 = "abac"
 str2 = "cab"
+
+str1 = "babbbbaa"
+str2 = "baabbbbba"
 res = sol.shortestCommonSupersequence(str1, str2)
 print(res)
 
