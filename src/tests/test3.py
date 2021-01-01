@@ -39,3 +39,7 @@ dtest.__delitem__(0)
 print(dtest)
 dtest[0] = 1
 print(dtest)
+
+l = "abbbadc"
+l = sorted(l)
+print(l)

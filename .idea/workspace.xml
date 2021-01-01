@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae42cb7f-3089-4ac3-a418-5744397a3de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LCP/Solution25.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution115.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution1202.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution1224.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution49.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution629.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution679.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution80.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution890.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Solution940.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reSolution1202.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reSolution679.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Solution85.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LeetcodePy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LeetcodePy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution410.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution410.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution679.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution679.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution87.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution87.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +59,7 @@
       <recent name="$PROJECT_DIR$/src/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Solution115">
+  <component name="RunManager" selected="Python.Solution679">
     <configuration name="Solution115" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LeetcodePy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,28 +79,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Solution1202" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LeetcodePy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Solution1202.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Solution629" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LeetcodePy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,6 +90,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Solution629.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Solution679" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LeetcodePy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Solution679.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Solution679" />
         <item itemvalue="Python.Solution115" />
         <item itemvalue="Python.Solution629" />
         <item itemvalue="Python.reSolution1202" />
         <item itemvalue="Python.Solution940" />
-        <item itemvalue="Python.Solution1202" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +234,7 @@
       <workItem from="1609267128467" duration="45000" />
       <workItem from="1609308990825" duration="15259000" />
       <workItem from="1609437305490" duration="2935000" />
-      <workItem from="1609489955392" duration="13608000" />
+      <workItem from="1609489955392" duration="14172000" />
     </task>
     <servers />
   </component>
@@ -319,11 +311,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/Solution.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution224.py</url>
           <line>8</line>
@@ -444,7 +431,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution410.py</url>
-          <line>7</line>
+          <line>6</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -464,22 +451,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution87.py</url>
-          <line>30</line>
+          <line>6</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution87.py</url>
-          <line>18</line>
+          <line>5</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution87.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/Solution87.py</url>
-          <line>54</line>
+          <line>32</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -527,12 +509,12 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <condition expression="suffix == ['#', '*', '+', '-', 2, 1, 9, 1, '#', '#', '#', '#', '#', '#', '#', '#', '#']" language="Python" />
           <url>file://$PROJECT_DIR$/src/Solution679.py</url>
-          <line>72</line>
+          <line>92</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Solution679.py</url>
-          <line>23</line>
+          <line>25</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

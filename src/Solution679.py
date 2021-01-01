@@ -9,6 +9,8 @@ class Solution:
     op_list = None
     num_list = None
     flag = False
+    post_tree = None
+    post_trees = None
 
     gen_combine_peer_layer = None
     def which_to_gen(self, parent:[], i, res):
@@ -31,27 +33,26 @@ class Solution:
             self.which_to_gen(parent, 0, [])
             for gen in self.gen_combine_peer_layer:
                 for p in gen:
-                    tree[2*p], tree[2*p+1] = 1, 1
+                    tree[p], tree[2*p], tree[2*p+1] = 2, 1, 1
                 self.generator(n, cnt+2*len(gen), layer+1, tree)
                 for p in gen:
-                    tree[2*p], tree[2*p+1] = 0, 0
+                    tree[p], tree[2*p], tree[2*p+1] = 1, 0, 0
         elif cnt == n and tree not in self.tree_list:
             self.tree_list.append(copy.deepcopy(tree))
 
 
-    def generate_suffix(self, nums: [], ops: [],  tree:[], i, j, k, suffix):
-        if k < len(tree) and (len(nums) > 0 or len(ops) > 0):
-            if tree[k] == 1:
-                if 2*k+1 < len(tree) and tree[2*k] == 1 and tree[2*k+1] == 1 and len(ops) > 0:
-                    suffix[k] = ops.pop()
-                    self.generate_suffix(nums, ops, tree, i, j, 2*k, suffix)
-                    self.generate_suffix(nums, ops, tree, i, j, 2*k+1, suffix)
-                elif len(nums) > 0:
-                    suffix[k] = nums.pop()
-                    self.generate_suffix(nums, ops, tree, i, j, 2*k, suffix)
-                    self.generate_suffix(nums, ops, tree, i, j, 2*k+1, suffix)
-        elif  len(nums) == 0 and len(ops) == 0 and suffix not in self.suffix_list:
-            self.suffix_list.append(copy.deepcopy(suffix))
+    def generate_suffix(self, nums: [], ops: [],  ptree:[]):
+        i, j = 0, 0
+        res = []
+        for k in range(len(ptree)):
+            if ptree[k] == 1:
+                res.append(nums[i])
+                i += 1
+            else:
+                res.append(ops[j])
+                j += 1
+        return res
+
 
     def select_combine(self, ops: []):
         for i, ei in enumerate(ops):
@@ -69,31 +70,30 @@ class Solution:
         elif nums not in self.shuffle_list:
             self.shuffle_list.append(copy.deepcopy(nums))
 
-    def calcu(self, suffix:[], i):
-        if not self.flag and i < len(suffix):
-            if suffix[i] != '#':
-                if suffix[i] in ['+', '-', '*', '/']:
-                    self.calcu(suffix, 2*i)
-                    self.calcu(suffix, 2*i+1)
-                    if 2*i+1 < len(suffix) and suffix[2*i] not in ['+', '-', '*', '/', '#'] and suffix[2*i+1] not in ['+', '-', '*', '/', '#']:
-                        if suffix[i] == '+':
-                            suffix[i] = suffix[2*i] + suffix[2*i+1]
-                        elif suffix[i] == '-':
-                            suffix[i] = suffix[2 * i] - suffix[2 * i + 1]
-                        elif suffix[i] == '*':
-                            suffix[i] = suffix[2 * i] * suffix[2 * i + 1]
-                        else:
-                            if suffix[2 * i + 1] != 0:
-                                suffix[i] = suffix[2 * i] / suffix[2 * i + 1]
-                            else:
-                                suffix[i] = inf
-                        suffix[2 * i], suffix[2 * i + 1] = '#', '#'
-                    if i == 1:
-                        print(suffix[1])
-                        if suffix[1] == 24:
-                            self.flag = True
+    def calcu(self, suffix:[]):
+        nums = []
+        for i,e in enumerate(suffix):
+            if e in ['+', '-', '*', '/']:
+                num2 = nums.pop()
+                num1 = nums.pop()
+                if e == '+':
+                    nums.append(num1+num2)
+                elif e == '-':
+                    nums.append(num1-num2)
+                elif e == '*':
+                    nums.append(num1*num2)
+                else:
+                    nums.append(num1/max(num2,0.000000000000001))
+            else:
+                nums.append(e)
+        return nums[0]
 
 
+    def get_post_tree(self, i, tree:[]):
+        if i < len(tree) and tree[i] != 0:
+            self.get_post_tree(2*i, tree)
+            self.get_post_tree(2*i+1, tree)
+            self.post_tree.append(tree[i])
 
 
 
@@ -117,21 +117,27 @@ class Solution:
         self.tree_list = []
         #self.generate_tree(7, 1, 1, tree)
         self.generator(7,1,0,tree)
-        self.suffix_list = []
+        #print(self.tree_list)
+        self.post_trees = []
         for tree in self.tree_list:
+            self.post_tree = []
+            self.get_post_tree(1, tree)
+            self.post_trees.append(copy.deepcopy(self.post_tree))
+        #print(self.post_trees)
+
+        self.suffix_list = []
+        for tree in self.post_trees:
             for nl in self.num_list:
                 for ol in self.op_list:
-                    suffix = ['#'] * length
-                    dnl = copy.deepcopy(nl)
-                    dol = copy.deepcopy(ol)
-                    self.generate_suffix(dnl, dol, tree, 0, 0, 1, suffix)
+                    self.suffix_list.append(self.generate_suffix(nl, ol, tree))
+        #print(self.suffix_list)
 
-
-        self.flag = False
         for suffix in self.suffix_list:
-            self.calcu(suffix, 1)
+            res = self.calcu(suffix)
+            if abs(res-24) <= 0.0000000000001:
+                return True
 
-        return self.flag
+        return False
 
 ['#', 2, 1, '+', 9, 1, '-', '*', '#', '#', '#', '#', '#', '#', '#', '#', '#']
 nums = [1,9,1,2]
@@ -139,6 +145,7 @@ nums = [1,9,1,2]
 nums = [1,3,4,6]
 nums = [4, 1, 8, 7]
 nums = [3,3,8,8]
+
 sol = Solution()
 res = sol.judgePoint24(nums)
 print(res)
