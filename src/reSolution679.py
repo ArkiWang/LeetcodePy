@@ -135,8 +135,10 @@ class Solution:
         for suffix in self.suffix_list:
             res = self.calcu(suffix)
             if abs(res-24) <= 0.0000000000001:
+                print(res)
                 return True
-
+            if res == 24:
+                return True
         return False
 
 ['#', 2, 1, '+', 9, 1, '-', '*', '#', '#', '#', '#', '#', '#', '#', '#', '#']
@@ -145,7 +147,6 @@ nums = [1,9,1,2]
 nums = [1,3,4,6]
 nums = [4, 1, 8, 7]
 nums = [3,3,8,8]
-
 sol = Solution()
 res = sol.judgePoint24(nums)
 print(res)
