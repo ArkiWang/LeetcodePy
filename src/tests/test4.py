@@ -1,3 +1,3 @@
-s = "this is a test"
-l = list(s)
-print(l)
+s = "01234567"
+index = s.find('1', 0, 1)
+print(index)

@@ -25,4 +25,3 @@ slices = [4,1,2,5,8,3,1,9,7]
 sol = Solution()
 res = sol.maxSizeSlices(slices)
 print(res)
-
